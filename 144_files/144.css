@@ -55,6 +55,10 @@ h1 {
     background-size: cover;
     border-radius: 10px 10px 0 0;
 }
+h2 {
+    background: url('144_files/main_photo.jpg') no-repeat center center;
+    background-size: cover;
+}
 
 
 /* ---------- pre-existing h3 backgrounds ---------- */
