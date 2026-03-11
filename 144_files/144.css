@@ -26,7 +26,7 @@ body {
     padding: 0 10px;
     width: 700px;
     margin: 20px auto;
-    background: transparent; /* images fully visible */
+    background: transparent;
     text-align: left;
     position: relative;
     z-index: 1;
@@ -55,11 +55,16 @@ h1 {
     background-size: cover;
     border-radius: 10px 10px 0 0;
 }
-h2 {
-    background: url('144_files/main_photo.jpg') no-repeat center center;
-    background-size: cover;
-}
 
+/* ---------- MAIN PHOTO FIX ---------- */
+h2 {
+    width: 100%;
+    height: 220px;
+    background: url("main_photo.jpg") no-repeat center center;
+    background-size: cover;
+    text-indent: -9999px;
+    margin-bottom: 20px;
+}
 
 /* ---------- pre-existing h3 backgrounds ---------- */
 .preamble h3 { background-image: url('h3_01.gif'); }
@@ -90,7 +95,7 @@ img.landscape {
 
 img.landscape:hover {
     transform: scale(1.08) rotate(1deg);
-    box-shadow: 0 12px 30px rgba(0,255,255,0.7); /* glowing cyan */
+    box-shadow: 0 12px 30px rgba(0,255,255,0.7);
 }
 
 /* ---------- paragraphs ---------- */
@@ -122,6 +127,7 @@ ul, li {
     background: url('bullet2.gif') no-repeat;
     padding: 5px 0;
 }
+
 div>.design-archives li, div>.zen-resources li {
     padding: 0;
     height: 23px;
@@ -138,7 +144,7 @@ a {
 
 a:hover, a:active {
     color: #ffffff;
-    background-color: #007777; /* highlight on hover */
+    background-color: #007777;
     border-radius: 4px;
 }
 
@@ -147,7 +153,7 @@ a:hover, a:active {
     font-size: 12px;
     line-height: 1.4em;
     color: #e0e0e0;
-    background: transparent; /* keep images visible */
+    background: transparent;
     padding: 12px;
     border-radius: 8px;
     margin-top: 20px;
@@ -157,7 +163,7 @@ a:hover, a:active {
 footer {
     text-align: center;
     padding: 12px 0;
-    background: transparent; /* keep main photo visible */
+    background: transparent;
     border-radius: 0 0 10px 10px;
     color: #00ffff;
     margin-top: 20px;
