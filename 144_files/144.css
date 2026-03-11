@@ -1,188 +1,160 @@
-/* css Zen Garden submission 144 - 'Verdure' by Lim Yuan Qing, http://yuanqing.blogspot.com/ */
-/* css released under Creative Commons ShareAlike License v1.0 - http://creativecommons.org/licenses/sa/1.0/  */
-/* All associated graphics copyright 2004, Lim Yuan Qing */
-/* Photography copyright Lynne Lancaster, http://sxc.hu/browse.phtml?f=profile&l=weirdvis */
-/* Added: Dec. 16th, 2004 */
-
-/* IMPORTANT */
-/* This design is not a template. You may not reproduce it elsewhere without the designer's written permission. */
-/* The CSS itself may freely be used for anything you wish, but the associated graphics belong to the designer. */
-/* What you may use - .css files. What you may not use - .jpg, .gif, and .png files. */
-
-
-
-
-
-
-
 /* ---------- misc ---------- */
-
 * {
- padding: 0;
- margin: 0;
- }
-body	{
- background: #f2f2f2;
- color: #777;
- font: 11px/1.4em Arial, Tahoma, Verdana, sans-serif;
- text-align: center;
- }
-abbr {
- cursor: help;
- }
+    padding: 0;
+    margin: 0;
+}
 
-/* ---------- div ---------- */
+/* ---------- body ---------- */
+@keyframes sunsetGradient {
+    0% { background: linear-gradient(to bottom, #1b1b2f, #2b3a67); }
+    50% { background: linear-gradient(to bottom, #2b3a67, #4a90e2); }
+    100% { background: linear-gradient(to bottom, #1b1b2f, #2b3a67); }
+}
 
+body {
+    animation: sunsetGradient 15s ease infinite;
+    color: #e0e0e0;
+    font: 12px/1.6em 'Courier New', monospace;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #1b1b2f, #2b3a67); 
+}
+
+/* ---------- page wrapper ---------- */
 .page-wrapper {
- padding: 0 2px;
- width: 500px !important;
- width /**/: 504px;
- margin: 0 auto;
- background: #fff url(container.gif) repeat-y;
- text-align: left;
- position: relative;
- }
-.summary, .preamble, .supporting div {
- padding: 5px 20px;
- width: 330px !important;
- width /**/: 370px;
- }
-.summary {
- padding: 15px 20px;
- background: url(line.gif) no-repeat 50% 100%;
- }
-.preamble {
- padding-top: 15px;
- }
-.supporting .requirements {
- padding-bottom: 12px;
- }
-.supporting footer {
- padding: 12px 20px;
- background: url(line.gif) no-repeat 50% 0;
- text-align: center;
- }
-.sidebar {
- position: absolute;
- top: 287px;
- left: 372px;
- font-size: 10px;
- line-height: 1.2em;
- }
+    padding: 0 10px;
+    width: 700px;
+    margin: 20px auto;
+    background: transparent; /* images fully visible */
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
 
-/* ---------- h1, h2, h3 ---------- */
+/* ---------- headings ---------- */
+@keyframes floatHover {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
 
-h1, h2, h3 {
- font-weight: normal;
- font-size: 1.0em;
- line-height: 1.0em;
- text-indent: -2000em;
- display: block;
- }
+h1, h3 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #00ffff;
+    text-shadow: 1px 1px 2px #000000;
+    animation: floatHover 6s ease-in-out infinite;
+}
+
 h1 {
- width: 500px;
- height: 80px;
- background: #fff url(h1.gif) no-repeat 0 100%;
- }
-h2 {
- width: 500px;
- height: 206px;
- background: #b6c77b url(h2.jpg) no-repeat;
- }
-.preamble h3, .supporting h3 {
- width: 231px;
- height: 27px;
- background-repeat: no-repeat;
- }
-.preamble h3 { background-image: url(h3_01.gif); }
-.explanation h3 { background-image: url(h3_02.gif); }
-.participation h3 { background-image: url(h3_03.gif); }
-.benefits h3 { background-image: url(h3_04.gif); }
-.requirements h3 { background-image: url(h3_05.gif); }
+    width: 100%;
+    height: 100px;
+    background: url('h1.gif') no-repeat center center;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* ---------- pre-existing h3 backgrounds ---------- */
+.preamble h3 { background-image: url('h3_01.gif'); }
+.explanation h3 { background-image: url('h3_02.gif'); }
+.participation h3 { background-image: url('h3_03.gif'); }
+.benefits h3 { background-image: url('h3_04.gif'); }
+.requirements h3 { background-image: url('h3_05.gif'); }
 
 .sidebar h3 {
- width: 130px;
- height: 34px;
- background-repeat: no-repeat;
- background-color: #f2f4d8;
- }
-.select {background-image: url(h3_06.gif); }
-.archives {background-image: url(h3_07.gif); }
-.resources {background-image: url(h3_08.gif); }
+    width: 130px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
 
-/* ---------- p ---------- */
+.select { background-image: url('h3_06.gif'); }
+.archives { background-image: url('h3_07.gif'); }
+.resources { background-image: url('h3_08.gif'); }
 
+/* ---------- images ---------- */
+img.landscape {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    margin-bottom: 15px;
+}
+
+img.landscape:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 12px 30px rgba(0,255,255,0.7); /* glowing cyan */
+}
+
+/* ---------- paragraphs ---------- */
 p {
- padding-top: 5px;
- }
+    padding-top: 5px;
+}
 p:nth-child(2) {
- padding-top: 2px;
- }
+    padding-top: 2px;
+}
 
-/* ---------- ul, li ---------- */
-
+/* ---------- lists ---------- */
 ul, li {
- list-style: none;
- }
-ul {
- border-top: 1px solid #ddd;
- }
-li {
- text-transform: lowercase;
- border-bottom: 1px solid #ddd;
- }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .design-selection li {
- padding: 5px 7px 5px 24px;
- background: url(bullet1.gif) no-repeat;
- }
+    padding: 6px 8px 6px 28px;
+    background: url('bullet1.gif') no-repeat left center;
+    transition: background-color 0.3s;
+}
+
 .design-selection li:hover {
- background: #e6e9cd url(hover.gif) no-repeat;
- }
+    background: #00bfff url('hover.gif') no-repeat left center;
+}
+
 .design-archives li, .zen-resources li {
- background: url(bullet2.gif) no-repeat;
- padding: 5px 0;
+    background: url('bullet2.gif') no-repeat;
+    padding: 5px 0;
 }
 div>.design-archives li, div>.zen-resources li {
- padding: 0;
- height: 23px;
- background: url(bullet2.gif) no-repeat;
+    padding: 0;
+    height: 23px;
+    background: url('bullet2.gif') no-repeat;
 }
 
-/* ---------- a ---------- */
-
+/* ---------- links ---------- */
 a {
- text-decoration: none;
- }
-.intro a, .supporting a {
- font-weight: bold;
- color: #9ead6c;
- }
-footer a, .sidebar a {
- color: #777;
- }
-.design-selection a {
- display: block;
- color: #9ead6c;
- }
-.design-selection a.designer-name {
- display: inline;
- color: #777;
- }
-.design-archives a, .zen-resources a {
- padding: 0 7px 0 22px;
+    text-decoration: none;
+    color: #00ffff;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 2px 4px;
 }
-div>.design-archives a, div>.zen-resources a {
- padding: 5px 7px 5px 22px;
- height: 13px !important;
- height /**/: 23px;
- display: block;
- }
-footer a:hover, footer a:active, .sidebar a:hover, .sidebar a:active, .design-selection a.designer-name:hover, .design-selection a.designer-name:active {
- color: #222;
- }
-.intro a:hover, .intro a:active, .supporting a:hover, .supporting a:active, .design-selection a:hover, .design-selection a:active {
- color: #85925C;
- }
-div>.design-archives a:hover, div>.design-archives a:active, div>.zen-resources a:hover, div>.zen-resources a:active {
- background: #e6e9cd url(hover.gif) no-repeat -130px 0;
- }
+
+a:hover, a:active {
+    color: #ffffff;
+    background-color: #007777; /* highlight on hover */
+    border-radius: 4px;
+}
+
+/* ---------- sidebar ---------- */
+.sidebar {
+    font-size: 12px;
+    line-height: 1.4em;
+    color: #e0e0e0;
+    background: transparent; /* keep images visible */
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* ---------- footer ---------- */
+footer {
+    text-align: center;
+    padding: 12px 0;
+    background: transparent; /* keep main photo visible */
+    border-radius: 0 0 10px 10px;
+    color: #00ffff;
+    margin-top: 20px;
+}
